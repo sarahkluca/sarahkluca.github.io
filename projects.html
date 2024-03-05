@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Define title -->
+    <title>Projects</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Include favicon. Use, e.g., https://favicon.io/ -->
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
+
+    <!-- Include style sheets -->
+    <link rel="stylesheet" href="projects.css" />
+
+    <!-- Fonts from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet" />
+
+    <!-- Load FontAwesome (for icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+    />
+
+    <!-- Load Academicons (for more icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css"
+      integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg=="
+      crossorigin="anonymous"
+    />
+  </head>
+
+ <body>
+	 <section id="links">
+		<ul class="links">
+			<li>
+		 		<a href="index.html">Home</a>
+			</li>
+			<li>
+				<a href="projects.html">Projects</a>
+			</li>
+			<li>
+				<a href="cv.html">CV</a>
+			</li>
+		</ul>
+	 </section>
+    <div class="grid-rules">
+      <div id="section-title">Current Projects</div>
+      <div class="image">
+        <img id="rule-image" src="images/statevaluefunction4.png">
+        <div id="rule-title">A Spiking Neural Algorithm for Markov Reward Processes</div>
+        <br>
+        <div id="citation">S. Luca, S. Musuvathy, and F. Wang, “A Spiking Neural Algorithm for Markov Reward Processes,” Poster presentation at <em>Neuro-Inspired Computational Elements Conference</em>, San Diego, CA, Apr. 2024.</div>
+        <p>
+          Markov reward processes are often studied in the context of Markov decision processes which are the mathematical basis for reinforcement learning. As a first step to developing spiking algorithms for Markov decision processes, we developed a spiking algorithm that estimates the state value function of a Markov reward process. The algorithm is composed of circuits that perform streaming binary arthimetic. A "1" is represented by a spike, and a "0" is represented by no spike. For each state there is a dot product, multiplcation, and addition circuit that perform each step in computing the Bellman equation:
+          \[V(s) = R(s)+\gamma\sum_{s'\in S}P_{ss'}V(s').\]
+          Currently, we are performing scaling studies on the Loihi 2 architecture. 
+          Future work will involve optimizing the current algorithm, developing algorithms for Markov models with unknown rewards and transition probabilities, and adding actions for Markov decision processes. The figure to the left shows an example diagram of the algorithm (A) for a three state Markov reward process (B).
+        </p>
+      </div>
+      <div id="section-title">Past Projects</div>
+      <div class="image">
+        <img id="rule-image" src="images/coincidencemaps.png">
+        <div id="rule-title">Localization through Grid-based Encodings on Digital Elevation Models</div>
+        <br>
+        <div id="citation">F. Wang, C. Teeter, S. Luca, S. Musuvathy, and B. Aimone, “Localization through Grid-based Encodings on Digital Elevation Models,” 
+          <em>NICE ’22: Proceedings of the 2022 Annual Neuro-Inspired Computational Elements Conference</em>, Mar. 2022, doi: 
+          <a href="https://dl.acm.org/doi/10.1145/3517343.3517366">https://doi.org/10.1145/3517343.3517366.</a>
+        </div>
+        <div id="citation">S. Luca, F. Wang, "Periodic Loss Function for Grid Cell Encodings," <em>CSRI Summer Proceedings 2021</em>, Nov. 2021, Available:
+          <a href="https://www.osti.gov/servlets/purl/1836402">https://www.osti.gov/servlets/purl/1836402</a>
+        </div>
+        <p>
+          Grid cells have been shown to encode physical locations with periodic phase-space representations. This project took elevation trajectories from a map and mapped them to a grid cell based phase-space coordinate system. Decoding the resulting phase-space coordinates showed that this method of encoding was able to localize position in space. For this project I worked on developing a metric for calculating the distance between two points in the phase-space coordinate system and a spiking algorithm for a neuromorphic implementation of the algorithm. The figure to the left shows coincidence maps of overlapping the activity patterns of different grid modules.
+        </p>
+      </div>
+      <div class="image">
+        <img id="rule-image" src="images/PCAscoreswithampstdandclusters.png">
+        <div id="rule-title">Characterizing Spindles Using Feature Extraction, PCA, and Fuzzy C-means Clustering</div>
+        <br>
+        <div id="citation">Third semester research project (Fall 2020). Advised by Jean-Marc Fellous.</div>
+        <p>
+          Spindles are oscillatory events that occur in electroencephalogram (EEG) recordings of neural activity in the brain during sleep. The goal of this project was to characterize spindles through the extraction of certain features and applying different levels of analysis - linear/correlation, principal component analysis (PCA), and fuzzy c-means clustering - to discover potential spindle classes. Five features were extracted: the amplitude of the K-Complex, which is a large downward deflection in the local field potential, the width of the K-Complex, the average spindle amplitude, the standard deviation of the amplitude, and the average frequency of the oscillations. Using PCA, I found that the majority of the variance was explained by the amplitude. I then clustered based on the amplitude using fuzzy c-means clustering. The results indicated that spindle amplitude could be clustered in to five different classes. The figure to the left is a plot of the spindles in the PCA space with the colors corresponding to the different clusters found with fuzzy c-means.
+        </p>
+      </div>
+      <div class="image">
+        <img id="rule-image" src="images/braintraining.png">
+        <div id="rule-title">Working Memory and Cognitive Flexibility Training in College Students</div>
+        <br>
+        <div id="citation">S. Luca, E. Nauert, K. Chichester, J. Buckner, P. Foo, and A. W. Kaur, 
+          “Working memory and cognitive flexibility training reveals no relationship to fluid intelligence in college students,” 
+          IMPULSE, vol. 14, no. 1, Jan. 2017. Available: 
+          <a href="https://impulse.pubpub.org/pub/rstp2obr/release/1?readingCollection=75d9ebad">https://impulse.pubpub.org/pub/rstp2obr/release/1?readingCollection=75d9ebad</a></div>
+        <p>
+          With the rise in brain training games like Lumosity, we were interested in whether the claims being made of widespread transferable benefits were true. We compared a no- contact control group of participants with two Lumosity groups and two active control groups. One Lumosity group focused on training cognitive flexibility and the other foced on training working memory, while the active control groups did either Sudoku puzzles (alternative task) or online trivia games (crystallized intelligence). The cognitive flexibility, working memory and fluid intelligence of the participants were tested before and after six weeks of training three to five days a week. Every group except the control showed significant improvement after the six weeks, but no training group was significantly better than the others. The figure to the left shows the pre- and post- measures of each group for four different tests: matrix reasoning (general intelligence), paper folding (general intelligence), Stroop (cognitive flexibility), and memory span (working memory).
+        </p>
+      </div>
+      <div class="image">
+        <img id="rule-image" src="images/illuminationproject.png">
+        <div id="rule-title">Invariant Representation of Images under Change in Illumination</div>
+        <br>
+        <div id="citation">MIT Summer Research Project (Summer 2015). Advised by Tomaso Poggio. Poster:
+          <a href="IlluminationPoster.pdf" target="_blank" rel="noopener noreferrer">Invariant Representation of Images under Change in Illumination</a>
+        </div>
+        <p>
+          Previous work has shown that an image representation based on a neurobiological model of simple-complex cells (Hubel and Wiesel model) is selective and invariant to group transformations and reduces the sample complexity of a learning task. I constructed an invariant image representation for illumination transformations and compared invariance and selectivity of this representation for two sets of images of faces under varying illumination conditions to a fake representation which was constructed from random images in the set. Invariance and selectivity were measured using the Euclidian distance between the image under each transformation with the invariant representation. We found that the image representation was invariant compared to the fake representation, but not selective. The figure to the left shows examples of the image dataset (left), the Euclidian distance between each transformed image in a group with the invariant signature (blue) compared to the fake orbit (orange) (middle), and the Euclidian distance between the invariant representations of each group (right).</p>
+      </div>
+    </div>
+    <div class="photo">Photo: Monte Tisiddu, Ulassai, Ogliastra, Sardinia.</div>
+  </body>
+ 
+</html>
+
